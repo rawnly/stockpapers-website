@@ -1,0 +1,35 @@
+.floatingButton {
+	$background: white;
+
+	font-size: .9em;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-user-drag: none;
+	background-color: $background;
+	border-radius: 7px;
+	border: none;
+	box-shadow: rgba($background, .39) 0 4px 14px 0;
+	color: #333333;
+	font-weight: 500;
+	cursor: pointer;
+	display: inline-block;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	margin: 0;
+	padding: 0 2rem;
+	text-decoration: none;
+	touch-action: pan-y;
+	transition-delay: 0s, 0s, 0s;
+	transition-duration: .2s, .2s, .2s;
+	transition-property: background, color, box-shadow;
+	transition-timing-function: ease, ease, ease;
+	user-select: none;
+	text-transform: uppercase;
+
+	&:hover {
+		opacity: .95;
+	}
+
+	&:active {
+		background: darken($background, 5%);
+	}
+}

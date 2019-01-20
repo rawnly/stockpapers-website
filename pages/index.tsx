@@ -1,6 +1,7 @@
 import { Component, Fragment } from "react";
+import Head from "next/head";
 
-import classnames from "classnames";
+import Badge from "../components/Badge";
 import classes from "../styles/global.scss";
 
 type PageProps = {
@@ -22,6 +23,16 @@ class Page extends Component<PageProps, PageState> {
   render() {
     return (
       <Fragment>
+        <Head>
+          <meta charset="UTF-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=0.8"
+          />
+          <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+          <title> 🔥 StockPapers 🔥 </title>
+        </Head>
         <ul className={classes.navbar}>
           <li> StockPapers </li>
         </ul>
@@ -42,7 +53,8 @@ class Page extends Component<PageProps, PageState> {
               </p>
               <div className={classes.appstore}>
                 <a href="/download">
-                  <img src="/static/Badge.svg" alt="app_store_badge" />
+                  {/* <FloatingButton>download</FloatingButton> */}
+                  <Badge background="#ffffff" foreground="#1d1d1d" />
                 </a>
               </div>
             </div>

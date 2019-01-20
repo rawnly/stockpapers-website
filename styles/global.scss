@@ -134,22 +134,26 @@ ul.navbar {
 	.content {
 		z-index: 1;
 		position: absolute;
-		width: 100%;
+		width: 80%;
 		height: 100%;
-		top: 0;
-		left: 0;
+		transform: translate(-50%, -50%);
+		top: 50%;
+		left: 50%;
 
 		@include flex;
 
 		.top {
-			flex: 1;
+			flex: .85;
 			width: 100%;
 
 			@include flex;
+
+			@media screen and (max-width: 600px) {
+				flex: .8;
+			}
 		}
 
 		.bottom {
-			height: 35vh;
 			min-height: 250px;
 
 			.small {
@@ -173,6 +177,10 @@ ul.navbar {
 				margin: 14px 0 35px 0;
 				color: white;
 				z-index: 1;
+
+				@media screen and (max-width: 600px) {
+					font-size: 45px;
+				}
 			}
 
 			.appstore {
@@ -181,8 +189,12 @@ ul.navbar {
 
 				@include flex(flex-end, $direction: row);
 
+				@media screen and (max-width: 600px) {
+					@include flex(center, $direction: row);
+				}
+
 				a {
-					width: 150px;
+					// width: 150px;
 					transition: all .1s ease-in-out;
 
 					&:hover {
