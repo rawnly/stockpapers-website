@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Link from "next/link";
 
 import "../styles/global.scss";
-import hero from "../styles/main.scss";
 
 const Paragraph = styled.p`
   text-align: justify;
