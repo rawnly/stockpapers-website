@@ -8,8 +8,9 @@
 	"scripts": {
 		"test": "stylelint --color --fix styles/*.scss",
 		"start.next": "next start",
-		"dev.next": "next dev",
+		"dev.next": "next",
 		"build": "next build",
+		"prestart": "yarn build",
 		"start": "NODE_ENV=production node server.js",
 		"dev": "NODE_ENV=development node --inspect server.js"
 	},
