@@ -9,7 +9,6 @@
 
 @mixin flex($justifyContent: center, $alignItems: center, $direction: column, $wrap: no-wrap) {
 	display: flex;
-
 	justify-content: $justifyContent;
 	align-items: $alignItems;
 	flex-direction: $direction;

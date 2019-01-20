@@ -4,6 +4,8 @@ const withCSS = require("@zeit/next-css");
 const withSass = require("@zeit/next-sass");
 const withTypescript = require("@zeit/next-typescript");
 
+const StyleLintPlugin = require('stylelint-webpack-plugin')
+
 const compose = require('next-compose-plugins')
 
 require('dotenv').config()
@@ -20,7 +22,7 @@ module.exports = compose([
 	},
 	webpack(config, options) {
 		const rules = [{
-			test: /(\.scss|\.sass)$/,
+			test: /\.s?(a|c)ss$/,
 			use: [{
 				loader: 'sass-resources-loader',
 				options: {
@@ -51,6 +53,7 @@ module.exports = compose([
 		}
 
 		config.module.rules = [...config.module.rules, ...rules]
+		config.plugins = [...config.plugins, new StyleLintPlugin()]
 
 		return config
 	}
