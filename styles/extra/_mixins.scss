@@ -1,0 +1,17 @@
+/* mixins.scss */
+
+@mixin container($w, $h: $w, $bg: none, $padding: 0) {
+	width: $w;
+	min-height: $h;
+	background: $bg;
+	padding: $padding;
+}
+
+@mixin flex($justifyContent: center, $alignItems: center, $direction: column, $wrap: no-wrap) {
+	display: flex;
+
+	justify-content: $justifyContent;
+	align-items: $alignItems;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+}

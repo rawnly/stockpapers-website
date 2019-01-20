@@ -1,3 +1,10 @@
+/* 
+	All the stuff included in styles/extra will be compiled in each scss file
+	**************************************************************************
+	DO NOT USE THE @import METHOD 
+*/
+
+
 * {
 	outline: none;
 	box-sizing: border-box;
@@ -5,11 +12,22 @@
 
 html,
 body {
-	font-family: sans-serif;
-	font-size: 18px;
+	font-family: $fontFamily;
+	font-size: $fontSize;
 
 	margin: 0;
 	padding: 0;
 
 	overflow-x: hidden;
+}
+
+
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+}
+
+section {
+	@include container(100vw, 100vh, none, 35px)
 }

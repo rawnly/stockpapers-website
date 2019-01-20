@@ -1,0 +1,6 @@
+/* functions.scss */
+
+@function toRem($size) {
+	$remSize: $size / $fontSize;
+	@return $remSize * 1rem;
+}

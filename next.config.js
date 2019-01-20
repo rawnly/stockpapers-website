@@ -20,6 +20,14 @@ module.exports = compose([
 	},
 	webpack(config, options) {
 		const rules = [{
+			test: /(\.scss|\.sass)$/,
+			use: [{
+				loader: 'sass-resources-loader',
+				options: {
+					resources: './styles/extra/*.scss'
+				},
+			}, ]
+		}, {
 			test: /\.css$/,
 			include: path.join(__dirname, 'src/components'),
 			use: [
