@@ -1,17 +1,17 @@
 import { Component, Fragment } from "react";
-import { Container, Description, Title, BlurLayer } from "../components/withStyled";
 
-import '../styles/global.scss'
+import classnames from "classnames";
+import classes from "../styles/global.scss";
 
 type PageProps = {
   background?: string;
 };
 
-type PageState = {}
+type PageState = {};
 
 type DefaultPageProps = {
-  background:string
-}
+  background: string;
+};
 
 class Page extends Component<PageProps, PageState> {
   static defaultProps: DefaultPageProps = {
@@ -22,18 +22,40 @@ class Page extends Component<PageProps, PageState> {
   render() {
     return (
       <Fragment>
-        <Container center={true} background={this.props.background}>
-          <BlurLayer background={this.props.background} />
-          <img src="/static/Logo/White.svg"/>
-          {/* <div>
-            <small>The best wallpaper app</small>
-            <Title>Make your phone looks stunning</Title>
-            <Description>
-              StockPapers is a simple, free app designed to bring hand-picked, high quality wallpapers in the palm of
-              your hand.
-            </Description>
-          </div> */}
-        </Container>
+        <ul className={classes.navbar}>
+          <li> StockPapers </li>
+        </ul>
+        <section className={classes.header}>
+          <div className={classes.blurLayerContainer}>
+            <div className={classes.blurLayer} />
+          </div>
+          <div className={classes.content}>
+            <div className={classes.top}>
+              <img src="/static/Logo/White.svg" alt="stockpapers_logo" />
+            </div>
+            <div className={classes.bottom}>
+              <p className={classes.small}>The best wallpaper app</p>
+              <h1 className={classes.title}>Make your phone looks stunning</h1>
+              <p className={classes.description}>
+                StockPapers is a simple, free app designed to bring hand-picked,
+                high quality wallpapers in the palm of your hand.
+              </p>
+              <div className={classes.appstore}>
+                <a href="/download">
+                  <img src="/static/Badge.svg" alt="app_store_badge" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <ul className={classes.footer}>
+          <li>Made with ❤ in Italy</li>
+          <li className={classes.right}>
+            <a href="#" className={classes.underline}>
+              Privacy Policy
+            </a>
+          </li>
+        </ul>
       </Fragment>
     );
   }
