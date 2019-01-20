@@ -24,14 +24,15 @@ class Page extends Component<PageProps, PageState> {
       <Fragment>
         <Container center={true} background={this.props.background}>
           <BlurLayer background={this.props.background} />
-          <div>
+          <img src="/static/Logo/White.svg"/>
+          {/* <div>
             <small>The best wallpaper app</small>
             <Title>Make your phone looks stunning</Title>
             <Description>
               StockPapers is a simple, free app designed to bring hand-picked, high quality wallpapers in the palm of
               your hand.
             </Description>
-          </div>
+          </div> */}
         </Container>
       </Fragment>
     );

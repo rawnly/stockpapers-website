@@ -6,6 +6,7 @@
 	"author": "Federico Vitale <fedevitale99@gmail.com>",
 	"license": "MIT",
 	"scripts": {
+		"test": "stylelint --color --fix styles/*.scss",
 		"start.next": "next start",
 		"dev.next": "next dev",
 		"build": "next build",
