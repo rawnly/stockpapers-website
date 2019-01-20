@@ -1,7 +1,6 @@
 # StockPapers Website
 
 > Download StockPapers on the [AppStore](https://get.stockpapers.app)
-> ![template](template.png)
 
 ## Styling
 
@@ -37,3 +36,7 @@ These 2 files above will be compiled in:
   border-radius: 5px;
 }
 ```
+
+## Sketch
+
+![template](template.png)
