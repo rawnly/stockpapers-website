@@ -1,0 +1,167 @@
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+}
+
+a.underline {
+	transition: color .25s ease-in-out;
+	color: #AAAAAA;
+	text-decoration: none;
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: -2.5px;
+		left: 0;
+		width: 18%;
+		height: 2px;
+		background: #999999;
+		border-radius: 5px;
+		opacity: .2;
+		transform: scaleX(1);
+		transition: all .25s ease-in-out;
+	}
+
+	&:hover {
+		color: #EDEDED;
+
+		&::before {
+			width: 105%;
+			opacity: 1;
+			transform: scaleX(.65);
+			background: #EDEDED;
+		}
+	}
+}
+
+.footer {
+	color: white;
+	background: #16161D;
+	list-style: none;
+	margin: 0;
+
+	@include flex(flex-start, flex-start, $direction: row);
+
+	li {
+		padding: 25px;
+		opacity: .8;
+
+		&.right {
+			margin-left: auto;
+		}
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+}
+
+.header {
+	background: #1D1D1D;
+	position: relative;
+	color: white;
+
+	.blurLayerContainer {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+
+		.blurLayer {
+			position: absolute;
+			top: -5%;
+			left: -5%;
+			width: 110%;
+			height: 110%;
+			z-index: 0;
+			filter: blur(5px);
+			background: url($headerBG) center no-repeat;
+			background-size: cover;
+			opacity: .9;
+		}
+	}
+
+	.content {
+		z-index: 1;
+		position: absolute;
+		width: 80%;
+		height: 100%;
+		transform: translate(-50%, -50%);
+		top: 50%;
+		left: 50%;
+
+		@include flex;
+
+		.top {
+			flex: .85;
+			width: 100%;
+
+			@include flex;
+
+			@media screen and (max-width: 600px) {
+				flex: .8;
+			}
+		}
+
+		.bottom {
+			min-height: 250px;
+
+			.small {
+				font-size: 15px;
+				z-index: 1;
+				opacity: .8;
+			}
+
+			.description {
+				max-width: 500px;
+				text-align: justify;
+				margin: 0;
+				z-index: 1;
+				word-break: break-all;
+				line-height: 25px;
+			}
+
+			.title {
+				font-size: 50px;
+				font-weight: bolder;
+				margin: 14px 0 35px 0;
+				color: white;
+				z-index: 1;
+
+				@media screen and (max-width: 600px) {
+					font-size: 45px;
+				}
+			}
+
+			.appstore {
+				width: 100%;
+				margin-top: 45px;
+
+				@include flex(flex-end, $direction: row);
+
+				@media screen and (max-width: 600px) {
+					@include flex(center, $direction: row);
+				}
+
+				a {
+					// width: 150px;
+					transition: all .1s ease-in-out;
+
+					&:hover {
+						cursor: pointer;
+						transform: scale(.98);
+					}
+
+					img {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}

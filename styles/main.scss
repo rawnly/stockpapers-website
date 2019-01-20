@@ -1,0 +1,16 @@
+ul.navbar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 80px;
+	color: white;
+	z-index: 9999;
+	padding: 0 35px;
+	list-style: none;
+
+	@include flex();
+
+	li {
+		font-weight: bold;
+	}
+}

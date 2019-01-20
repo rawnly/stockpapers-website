@@ -1,8 +1,11 @@
 import { Component, Fragment } from "react";
 import Head from "next/head";
+import Link from "next/link";
 
 import Badge from "../components/Badge";
-import classes from "../styles/global.scss";
+import "../styles/global.scss";
+import classes from "../styles/index.scss";
+import hero from "../styles/main.scss";
 
 type PageProps = {
   background?: string;
@@ -33,7 +36,7 @@ class Page extends Component<PageProps, PageState> {
 
           <title> 🔥 StockPapers 🔥 </title>
         </Head>
-        <ul className={classes.navbar}>
+        <ul className={hero.navbar}>
           <li> StockPapers </li>
         </ul>
         <section className={classes.header}>
@@ -63,9 +66,9 @@ class Page extends Component<PageProps, PageState> {
         <ul className={classes.footer}>
           <li>Made with ❤ in Italy</li>
           <li className={classes.right}>
-            <a href="#" className={classes.underline}>
-              Privacy Policy
-            </a>
+            <Link href="/privacy-policy">
+              <a className={classes.underline}>Privacy Policy</a>
+            </Link>
           </li>
         </ul>
       </Fragment>
