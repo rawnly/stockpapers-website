@@ -14,7 +14,7 @@ app
 		const server = express();
 		const handler = app.getRequestHandler();
 
-		server.get("/itunes|store|download", (req, res) => res.redirect("http://get.stockpapers.app").status(301));
+		server.get("/itunes|store|download|get", (req, res) => res.redirect("https://itunes.apple.com/us/app/stock-papers/id1443861313?ls=1&mt=8").status(301));
 		server.get("/author", (req, res) => res.redirect("https://rawnly.com").status(301));
 
 		server.get("*", (req, res) => handler(req, res));

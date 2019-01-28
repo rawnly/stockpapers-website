@@ -11,7 +11,7 @@
 		"dev.next": "next",
 		"build": "next build",
 		"prestart": "yarn build",
-		"start": "NODE_ENV=production node server.js",
+		"start": "PORT=3003 NODE_ENV=production node server.js",
 		"dev": "NODE_ENV=development node --inspect server.js"
 	},
 	"dependencies": {
